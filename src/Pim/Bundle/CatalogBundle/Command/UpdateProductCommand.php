@@ -116,7 +116,7 @@ class UpdateProductCommand extends ContainerAwareCommand
      */
     protected function getProduct($identifier)
     {
-        $repository = $this->getContainer()->get('pim_catalog.repository.product');
+        $repository = $this->getContainer()->get('pim_catalog.repository.product_without_permission');
         $product = $repository->findOneByIdentifier($identifier);
 
         return $product;
