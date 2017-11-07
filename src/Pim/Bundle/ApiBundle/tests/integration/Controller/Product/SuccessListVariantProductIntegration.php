@@ -276,7 +276,20 @@ JSON;
                 },
                 "created"       : "2017-01-23T11:44:25+01:00",
                 "updated"       : "2017-01-23T11:44:25+01:00",
-                "associations"  : {}
+                "associations"  : {
+                    "PACK": {
+                        "products": [], "groups" => []
+                    },
+                    "SUBSTITUTION": {
+                        "products": [], "groups" => []
+                    },
+                    "UPSELL": {
+                        "products": [], "groups" => []
+                    },
+                    "X_SELL": {
+                        "products": [], "groups" => []
+                    }
+                }
             },
             {
                 "_links" : {
@@ -297,7 +310,20 @@ JSON;
                 },
                 "created"       : "2017-01-23T11:44:25+01:00",
                 "updated"       : "2017-01-23T11:44:25+01:00",
-                "associations"  : {}
+                "associations"  : {
+                    "PACK": {
+                        "products": [], "groups" => []
+                    },
+                    "SUBSTITUTION": {
+                        "products": [], "groups" => []
+                    },
+                    "UPSELL": {
+                        "products": [], "groups" => []
+                    },
+                    "X_SELL": {
+                        "products": [], "groups" => []
+                    }
+                }
             },
             {
                 "_links" : {
@@ -318,7 +344,20 @@ JSON;
                 },
                 "created"       : "2017-01-23T11:44:25+01:00",
                 "updated"       : "2017-01-23T11:44:25+01:00",
-                "associations"  : {}
+                "associations"  : {
+                    "PACK": {
+                        "products": [], "groups" => []
+                    },
+                    "SUBSTITUTION": {
+                        "products": [], "groups" => []
+                    },
+                    "UPSELL": {
+                        "products": [], "groups" => []
+                    },
+                    "X_SELL": {
+                        "products": [], "groups" => []
+                    }
+                }
             },
             {
                 "_links" : {
@@ -339,7 +378,20 @@ JSON;
                 },
                 "created"       : "2017-01-23T11:44:25+01:00",
                 "updated"       : "2017-01-23T11:44:25+01:00",
-                "associations"  : {}
+                "associations"  : {
+                    "PACK": {
+                        "products": [], "groups" => []
+                    },
+                    "SUBSTITUTION": {
+                        "products": [], "groups" => []
+                    },
+                    "UPSELL": {
+                        "products": [], "groups" => []
+                    },
+                    "X_SELL": {
+                        "products": [], "groups" => []
+                    }
+                }
             }
         ]
     }
@@ -395,7 +447,18 @@ JSON;
         "created": "2017-09-25T14:02:10+02:00",
         "updated": "2017-09-25T14:02:11+02:00",
         "associations": {
-          
+            "PACK": {
+                "products": [], "groups" => []
+            },
+            "SUBSTITUTION": {
+                "products": [], "groups" => []
+            },
+            "UPSELL": {
+                "products": [], "groups" => []
+            },
+            "X_SELL": {
+                "products": [], "groups" => []
+            }
         }
       },
       {
@@ -426,7 +489,18 @@ JSON;
         "created": "2017-09-25T14:02:11+02:00",
         "updated": "2017-09-25T14:02:11+02:00",
         "associations": {
-          
+            "PACK": {
+                "products": [], "groups" => []
+            },
+            "SUBSTITUTION": {
+                "products": [], "groups" => []
+            },
+            "UPSELL": {
+                "products": [], "groups" => []
+            },
+            "X_SELL": {
+                "products": [], "groups" => []
+            }
         }
       },
       {
@@ -458,7 +532,18 @@ JSON;
         "created": "2017-09-25T14:02:11+02:00",
         "updated": "2017-09-25T14:02:11+02:00",
         "associations": {
-          
+            "PACK": {
+                "products": [], "groups" => []
+            },
+            "SUBSTITUTION": {
+                "products": [], "groups" => []
+            },
+            "UPSELL": {
+                "products": [], "groups" => []
+            },
+            "X_SELL": {
+                "products": [], "groups" => []
+            }
         }
       },
       {
@@ -490,7 +575,18 @@ JSON;
         "created": "2017-09-25T14:02:11+02:00",
         "updated": "2017-09-25T14:02:11+02:00",
         "associations": {
-          
+            "PACK": {
+                "products": [], "groups" => []
+            },
+            "SUBSTITUTION": {
+                "products": [], "groups" => []
+            },
+            "UPSELL": {
+                "products": [], "groups" => []
+            },
+            "X_SELL": {
+                "products": [], "groups" => []
+            }
         }
       }
     ]
@@ -594,7 +690,20 @@ JSON;
                 },
                 "created"       : "2017-01-23T11:44:25+01:00",
                 "updated"       : "2017-01-23T11:44:25+01:00",
-                "associations"  : {}
+                "associations"  : {
+                    "PACK": {
+                        "products": [], "groups" => []
+                    },
+                    "SUBSTITUTION": {
+                        "products": [], "groups" => []
+                    },
+                    "UPSELL": {
+                        "products": [], "groups" => []
+                    },
+                    "X_SELL": {
+                        "products": [], "groups" => []
+                    }
+                }
             },
             {
                 "_links" : {
@@ -650,7 +759,20 @@ JSON;
                 },
                 "created"       : "2017-01-23T11:44:25+01:00",
                 "updated"       : "2017-01-23T11:44:25+01:00",
-                "associations"  : {}
+                "associations"  : {
+                    "PACK": {
+                        "products": [], "groups" => []
+                    },
+                    "SUBSTITUTION": {
+                        "products": [], "groups" => []
+                    },
+                    "UPSELL": {
+                        "products": [], "groups" => []
+                    },
+                    "X_SELL": {
+                        "products": [], "groups" => []
+                    }
+                }
             }
         ]
     }
@@ -869,7 +991,20 @@ JSON;
         },
   "created": "2017-09-20T15:37:40+02:00",
   "updated": "2017-09-20T15:37:40+02:00",
-  "associations": {}
+  "associations"  : {
+    "PACK": {
+      "products": [], "groups" => []
+    },
+    "SUBSTITUTION": {
+      "products": [], "groups" => []
+    },
+    "UPSELL": {
+      "products": [], "groups" => []
+    },
+    "X_SELL": {
+      "products": [], "groups" => []
+    }
+  }
 }
 JSON;
 
@@ -932,7 +1067,20 @@ JSON;
         },
   "created": "2017-09-20T15:37:40+02:00",
   "updated": "2017-09-20T15:37:40+02:00",
-  "associations": {}
+  "associations"  : {
+    "PACK": {
+      "products": [], "groups" => []
+    },
+    "SUBSTITUTION": {
+      "products": [], "groups" => []
+    },
+    "UPSELL": {
+      "products": [], "groups" => []
+    },
+    "X_SELL": {
+      "products": [], "groups" => []
+    }
+  }
 }
 JSON;
 
@@ -996,7 +1144,20 @@ JSON;
         },
   "created": "2017-09-20T15:37:40+02:00",
   "updated": "2017-09-20T15:37:40+02:00",
-  "associations": {}
+  "associations"  : {
+    "PACK": {
+      "products": [], "groups" => []
+    },
+    "SUBSTITUTION": {
+      "products": [], "groups" => []
+    },
+    "UPSELL": {
+      "products": [], "groups" => []
+    },
+    "X_SELL": {
+      "products": [], "groups" => []
+    }
+  }
 }
 JSON;
 
@@ -1062,8 +1223,19 @@ JSON;
         },
   "created": "2017-09-20T15:37:40+02:00",
   "updated": "2017-09-20T15:37:40+02:00",
-  "associations": {
-    
+  "associations"  : {
+    "PACK": {
+      "products": [], "groups" => []
+    },
+    "SUBSTITUTION": {
+      "products": [], "groups" => []
+    },
+    "UPSELL": {
+      "products": [], "groups" => []
+    },
+    "X_SELL": {
+      "products": [], "groups" => []
+    }
   }
 }
 JSON;

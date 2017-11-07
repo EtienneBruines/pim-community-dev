@@ -30,9 +30,9 @@ class ExportProductsByCategoriesIntegration extends AbstractExportTestCase
     public function testProductExportWithCategoryFilter()
     {
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups
-product_with_categories;categoryA,categoryA1,categoryA2;1;;
-product_with_single_category_A;categoryA;1;;
+sku;categories;enabled;family;groups;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
+product_with_categories;categoryA,categoryA1,categoryA2;1;;;;;;;;;;
+product_with_single_category_A;categoryA;1;;;;;;;;;;
 
 CSV;
 

@@ -2,6 +2,7 @@
 
 namespace Pim\Component\Catalog\Normalizer\Standard\Product;
 
+use Pim\Component\Catalog\Builder\ProductBuilderInterface;
 use Pim\Component\Catalog\Model\ProductInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
@@ -14,12 +15,25 @@ use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
  */
 class AssociationsNormalizer implements NormalizerInterface
 {
+    /** @var ProductBuilderInterface */
+    private $entityWithValuesBuilder;
+
+    /**
+     * @param ProductBuilderInterface $entityWithValuesBuilder
+     */
+    public function __construct(ProductBuilderInterface $entityWithValuesBuilder)
+    {
+        $this->entityWithValuesBuilder = $entityWithValuesBuilder;
+    }
+
     /**
      * {@inheritdoc}
      */
     public function normalize($product, $format = null, array $context = [])
     {
         $data = [];
+
+        $this->entityWithValuesBuilder->addMissingAssociations($product);
 
         foreach ($product->getAssociations() as $association) {
             $code = $association->getAssociationType()->getCode();

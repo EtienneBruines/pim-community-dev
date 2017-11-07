@@ -42,8 +42,8 @@ class ExportProductsBySimpleSelectReferenceDataIntegration extends AbstractExpor
     public function testProductExportByFilteringOnOneOption()
     {
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups;a_ref_data_simple_select
-product_option_baby_blue;;1;;;baby-blue
+sku;categories;enabled;family;groups;a_ref_data_simple_select;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
+product_option_baby_blue;;1;;;baby-blue;;;;;;;;
 
 CSV;
 
@@ -69,9 +69,9 @@ CSV;
     public function testProductExportByFilteringOnTwoOptions()
     {
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups;a_ref_data_simple_select
-product_option_baby_blue;;1;;;baby-blue
-product_option_champagne;;1;;;champagne
+sku;categories;enabled;family;groups;a_ref_data_simple_select;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
+product_option_baby_blue;;1;;;baby-blue;;;;;;;;
+product_option_champagne;;1;;;champagne;;;;;;;;
 
 CSV;
 
@@ -97,9 +97,9 @@ CSV;
     public function testProductExportByFilteringWithEmpty()
     {
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups
-product_without_option;;1;;
-product_without_option_attribute;;1;;
+sku;categories;enabled;family;groups;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
+product_without_option;;1;;;;;;;;;;
+product_without_option_attribute;;1;;;;;;;;;;
 
 CSV;
 

@@ -18,8 +18,8 @@ class ExportProductsByIdentifiersIntegration extends AbstractExportTestCase
     public function testProductExportWithFilterOnOneIdentifier()
     {
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups
-product_1;;1;;
+sku;categories;enabled;family;groups;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
+product_1;;1;;;;;;;;;;
 
 CSV;
 
@@ -45,9 +45,9 @@ CSV;
     public function testProductExportWithFilterOnAListOfIdentifiers()
     {
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups
-product_1;;1;;
-product_2;;1;;
+sku;categories;enabled;family;groups;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
+product_1;;1;;;;;;;;;;
+product_2;;1;;;;;;;;;;
 
 CSV;
 

@@ -41,8 +41,8 @@ class ExportProductsByTextAreaIntegration extends AbstractExportTestCase
     public function testProductExportByFilteringWithEqualsOperatorOnTextArea()
     {
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups;a_text_area
-product_1;;1;;;Awesome
+sku;categories;enabled;family;groups;a_text_area;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
+product_1;;1;;;Awesome;;;;;;;;
 
 CSV;
 
@@ -68,9 +68,9 @@ CSV;
     public function testProductExportByFilteringWithContainsOperatorOnTextArea()
     {
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups;a_text_area
-product_1;;1;;;Awesome
-product_2;;1;;;"Awesome product"
+sku;categories;enabled;family;groups;a_text_area;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
+product_1;;1;;;Awesome;;;;;;;;
+product_2;;1;;;"Awesome product";;;;;;;;
 
 CSV;
 
@@ -96,9 +96,9 @@ CSV;
     public function testProductExportByFilteringWithStartWithOperatorOnTextArea()
     {
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups;a_text_area
-product_1;;1;;;Awesome
-product_2;;1;;;"Awesome product"
+sku;categories;enabled;family;groups;a_text_area;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
+product_1;;1;;;Awesome;;;;;;;;
+product_2;;1;;;"Awesome product";;;;;;;;
 
 CSV;
 
@@ -124,8 +124,8 @@ CSV;
     public function testProductExportByFilteringWithIsEmptyOperatorOnTextArea()
     {
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups
-product_4;;1;;
+sku;categories;enabled;family;groups;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
+product_4;;1;;;;;;;;;;
 
 CSV;
 

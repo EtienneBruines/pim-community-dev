@@ -50,9 +50,9 @@ class ExportProductsByMultiSelectIntegration extends AbstractExportTestCase
     public function testProductExportByFilteringOnOneOption()
     {
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups;a_multi_select
-product_option_A;;1;;;optionA
-product_option_A_B;;1;;;optionA,optionB
+sku;categories;enabled;family;groups;a_multi_select;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
+product_option_A;;1;;;optionA;;;;;;;;
+product_option_A_B;;1;;;optionA,optionB;;;;;;;;
 
 CSV;
 
@@ -78,10 +78,10 @@ CSV;
     public function testProductExportByFilteringOnTwoOptions()
     {
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups;a_multi_select
-product_option_A;;1;;;optionA
-product_option_B;;1;;;optionB
-product_option_A_B;;1;;;optionA,optionB
+sku;categories;enabled;family;groups;a_multi_select;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
+product_option_A;;1;;;optionA;;;;;;;;
+product_option_B;;1;;;optionB;;;;;;;;
+product_option_A_B;;1;;;optionA,optionB;;;;;;;;
 
 CSV;
 
@@ -107,9 +107,9 @@ CSV;
     public function testProductExportByFilteringWithEmpty()
     {
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups
-product_without_option;;1;;
-product_without_option_attribute;;1;;
+sku;categories;enabled;family;groups;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
+product_without_option;;1;;;;;;;;;;
+product_without_option_attribute;;1;;;;;;;;;;
 
 CSV;
 

@@ -31,8 +31,8 @@ class ExportProductsByImagesIntegration extends AbstractExportTestCase
     public function testProductExportWithFilterEqualsOnFileValue()
     {
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups;an_image
-product_1;;1;;;files/product_1/an_image/akeneo.jpg
+sku;categories;enabled;family;groups;an_image;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
+product_1;;1;;;files/product_1/an_image/akeneo.jpg;;;;;;;;
 
 CSV;
 
@@ -58,8 +58,8 @@ CSV;
     public function testProductExportWithFilterStartWithOnFileValue()
     {
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups;an_image
-product_2;;1;;;files/product_2/an_image/ziggy.png
+sku;categories;enabled;family;groups;an_image;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
+product_2;;1;;;files/product_2/an_image/ziggy.png;;;;;;;;
 
 CSV;
 

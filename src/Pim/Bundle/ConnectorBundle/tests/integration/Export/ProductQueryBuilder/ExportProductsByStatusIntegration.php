@@ -21,9 +21,9 @@ class ExportProductsByStatusIntegration extends AbstractExportTestCase
     public function testProductExportByFilteringOnEnableProducts()
     {
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups
-product_1;;1;;
-product_3;;1;;
+sku;categories;enabled;family;groups;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
+product_1;;1;;;;;;;;;;
+product_3;;1;;;;;;;;;;
 
 CSV;
 
@@ -49,8 +49,8 @@ CSV;
     public function testProductExportByFilteringOnDisableProducts()
     {
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups
-product_2;;0;;
+sku;categories;enabled;family;groups;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
+product_2;;0;;;;;;;;;;
 
 CSV;
 
@@ -76,10 +76,10 @@ CSV;
     public function testProductExportWithoutFilterOnStatus()
     {
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups
-product_1;;1;;
-product_2;;0;;
-product_3;;1;;
+sku;categories;enabled;family;groups;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
+product_1;;1;;;;;;;;;;
+product_2;;0;;;;;;;;;;
+product_3;;1;;;;;;;;;;
 
 CSV;
 

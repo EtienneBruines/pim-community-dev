@@ -33,8 +33,8 @@ class ExportProductsByNumberIntegration extends AbstractExportTestCase
     public function testProductExportByFilteringOnANumber()
     {
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups;a_number_integer
-product_1;;1;;;100
+sku;categories;enabled;family;groups;a_number_integer;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
+product_1;;1;;;100;;;;;;;;
 
 CSV;
 

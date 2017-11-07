@@ -42,7 +42,12 @@ class ProductStandardIntegration extends TestCase
             ],
             'created'       => '2016-06-14T13:12:50+02:00',
             'updated'       => '2016-06-14T13:12:50+02:00',
-            'associations'  => [],
+            'associations'  => [
+                'PACK'         => ['groups' => [], 'products' => []],
+                'SUBSTITUTION' => ['groups' => [], 'products' => []],
+                'UPSELL'       => ['groups' => [], 'products' => []],
+                'X_SELL'       => ['groups' => [], 'products' => []],
+            ],
         ];
 
         $this->assertStandardFormat('bar', $expected);
@@ -68,7 +73,12 @@ class ProductStandardIntegration extends TestCase
             ],
             'created'       => '2016-06-14T13:12:50+02:00',
             'updated'       => '2016-06-14T13:12:50+02:00',
-            'associations'  => [],
+            'associations'  => [
+                'PACK'         => ['groups' => [], 'products' => []],
+                'SUBSTITUTION' => ['groups' => [], 'products' => []],
+                'UPSELL'       => ['groups' => [], 'products' => []],
+                'X_SELL'       => ['groups' => [], 'products' => []],
+            ],
         ];
 
         $this->assertStandardFormat('baz', $expected);
@@ -252,9 +262,10 @@ class ProductStandardIntegration extends TestCase
                 'created'       => '2016-06-14T13:12:50+02:00',
                 'updated'       => '2016-06-14T13:12:50+02:00',
                 'associations'  => [
-                    'PACK'   => ['groups' => [], 'products' => ['bar', 'baz']],
-                    'UPSELL' => ['groups' => ['groupA'], 'products' => []],
-                    'X_SELL' => ['groups' => ['groupB'], 'products' => ['bar']],
+                    'PACK'         => ['groups' => [], 'products' => ['bar', 'baz']],
+                    'SUBSTITUTION' => ['groups' => [], 'products' => []],
+                    'UPSELL'       => ['groups' => ['groupA'], 'products' => []],
+                    'X_SELL'       => ['groups' => ['groupB'], 'products' => ['bar']],
                 ],
             ];
 
@@ -272,12 +283,6 @@ class ProductStandardIntegration extends TestCase
 
         $result = $this->normalizeProductToStandardFormat($product);
 
-        //TODO: why do we need that?
-        $result = $this->sanitizeMediaAttributeData($result);
-
-        //TODO: why do we need that?
-        $expected = $this->sanitizeMediaAttributeData($expected);
-
         NormalizedProductCleaner::clean($expected);
         NormalizedProductCleaner::clean($result);
 
@@ -294,40 +299,5 @@ class ProductStandardIntegration extends TestCase
         $serializer = $this->get('pim_serializer');
 
         return $serializer->normalize($product, 'standard');
-    }
-
-    /**
-     * Replaces dates fields (created/updated) in the $data array by self::DATE_FIELD_COMPARISON.
-     *
-     * @param array $data
-     *
-     * @return array
-     */
-    private function sanitizeDateFields(array $data)
-    {
-        $data['created'] = DateSanitizer::sanitize($data['created']);
-        $data['updated'] = DateSanitizer::sanitize($data['updated']);
-
-        return $data;
-    }
-
-    /**
-     * Replaces media attributes data in the $data array by self::MEDIA_ATTRIBUTE_DATA_COMPARISON.
-     *
-     * @param array $data
-     *
-     * @return array
-     */
-    private function sanitizeMediaAttributeData(array $data)
-    {
-        foreach ($data['values'] as $attributeCode => $values) {
-            if (1 === preg_match('/.*(file|image).*/', $attributeCode)) {
-                foreach ($values as $index => $value) {
-                    $data['values'][$attributeCode][$index]['data'] = MediaSanitizer::sanitize($value['data']);
-                }
-            }
-        }
-
-        return $data;
     }
 }

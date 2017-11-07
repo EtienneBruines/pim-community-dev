@@ -21,10 +21,10 @@ class ExportProductsBySpecificDateIntegration extends AbstractExportTestCase
     public function testProductExportByFilteringOnDateSinceLastJob()
     {
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups;a_metric;a_metric-unit;a_number_float
-product_1;;1;familyA2;;;;
-product_2;;1;familyA2;;;;
-product_3;;1;familyA2;;;;
+sku;categories;enabled;family;groups;a_metric;a_metric-unit;a_number_float;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
+product_1;;1;familyA2;;;;;;;;;;;;
+product_2;;1;familyA2;;;;;;;;;;;;
+product_3;;1;familyA2;;;;;;;;;;;;
 
 CSV;
 
@@ -52,8 +52,8 @@ CSV;
         $this->updateProduct('product_3', ['family' => 'familyA1']);
 
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups;a_date;a_file;a_localizable_image-en_US
-product_3;;1;familyA1;;;;
+sku;categories;enabled;family;groups;a_date;a_file;a_localizable_image-en_US;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
+product_3;;1;familyA1;;;;;;;;;;;;
 
 CSV;
 
@@ -65,10 +65,10 @@ CSV;
     public function testProductExportByFilteringSinceASpecificDate()
     {
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups;a_metric;a_metric-unit;a_number_float
-product_1;;1;familyA2;;;;
-product_2;;1;familyA2;;;;
-product_3;;1;familyA2;;;;
+sku;categories;enabled;family;groups;a_metric;a_metric-unit;a_number_float;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
+product_1;;1;familyA2;;;;;;;;;;;;
+product_2;;1;familyA2;;;;;;;;;;;;
+product_3;;1;familyA2;;;;;;;;;;;;
 
 CSV;
 

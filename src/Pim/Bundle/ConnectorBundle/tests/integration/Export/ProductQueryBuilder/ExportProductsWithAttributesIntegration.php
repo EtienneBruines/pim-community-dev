@@ -47,10 +47,10 @@ class ExportProductsWithAttributesIntegration extends AbstractExportTestCase
     public function testProductExportBySelectingOnlyOneAttribute()
     {
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups;a_text_area
-product_1;;1;my_family;;Amazing
-product_2;;1;my_family;;
-product_4;;1;;;
+sku;categories;enabled;family;groups;a_text_area;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
+product_1;;1;my_family;;Amazing;;;;;;;;
+product_2;;1;my_family;;;;;;;;;;
+product_4;;1;;;;;;;;;;;
 
 CSV;
 
@@ -71,7 +71,7 @@ CSV;
     public function testProductExportWithAttributesInTheSameOrderAsTheFilter()
     {
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups;a_text_area;a_text
+sku;categories;enabled;family;groups;a_text_area;a_text;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
 product_1;;1;my_family;;Amazing;Awesome
 product_2;;1;my_family;;;"Awesome product"
 product_4;;1;;;;
@@ -92,10 +92,10 @@ CSV;
         $this->assertProductExport($expectedCsv, $config);
 
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups;a_text;a_text_area
-product_1;;1;my_family;;Awesome;Amazing
-product_2;;1;my_family;;"Awesome product";
-product_4;;1;;;;
+sku;categories;enabled;family;groups;a_text;a_text_area;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
+product_1;;1;my_family;;Awesome;Amazing;;;;;;;;
+product_2;;1;my_family;;"Awesome product";;;;;;;;;
+product_4;;1;;;;;;;;;;;;
 
 CSV;
 
@@ -121,9 +121,9 @@ CSV;
     public function testProductExportByExportingTheAttributesOnlyOnce()
     {
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups;a_text_area;a_text
-product_1;;1;my_family;;Amazing;Awesome
-product_2;;1;my_family;;;"Awesome product"
+sku;categories;enabled;family;groups;a_text_area;a_text;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
+product_1;;1;my_family;;Amazing;Awesome;;;;;;;;
+product_2;;1;my_family;;;"Awesome product";;;;;;;;
 
 CSV;
 

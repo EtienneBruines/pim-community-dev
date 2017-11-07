@@ -62,10 +62,10 @@ class ExportProductsByCompletenessIntegration extends AbstractExportTestCase
     public function testProductExportWithCompleteProductsOnAtLeastOneLocale()
     {
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups;name-en_US
-french;;1;localized;;
-english;;1;localized;;"English name"
-complete;;1;localized;;"English complete"
+sku;categories;enabled;family;groups;name-en_US;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
+french;;1;localized;;;;;;;;;;
+english;;1;localized;;"English name";;;;;;;;
+complete;;1;localized;;"English complete";;;;;;;;
 
 CSV;
 
@@ -94,8 +94,8 @@ CSV;
     public function testProductExportWithCompleteProductsOnAllLocales()
     {
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups;name-en_US
-complete;;1;localized;;"English complete"
+sku;categories;enabled;family;groups;name-en_US;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
+complete;;1;localized;;"English complete";;;;;;;;
 
 CSV;
 
@@ -124,8 +124,8 @@ CSV;
     public function testProductExportWithIncompleteProductsOnAllLocales()
     {
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups;name-en_US
-empty;;1;localized;;
+sku;categories;enabled;family;groups;name-en_US;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
+empty;;1;localized;;;;;;;;;;
 
 CSV;
 
@@ -154,11 +154,11 @@ CSV;
     public function testProductExportWithoutFilterOnCompleteness()
     {
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups;name-en_US
-french;;1;localized;;
-english;;1;localized;;"English name"
-complete;;1;localized;;"English complete"
-empty;;1;localized;;
+sku;categories;enabled;family;groups;name-en_US;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
+french;;1;localized;;;;;;;;;;
+english;;1;localized;;"English name";;;;;;;;
+complete;;1;localized;;"English complete";;;;;;;;
+empty;;1;localized;;;;;;;;;;
 
 CSV;
 

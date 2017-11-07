@@ -31,8 +31,8 @@ class ExportProductsByDateIntegration extends AbstractExportTestCase
     public function testProductExportWithFilterSuperiorToADate()
     {
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups;a_date
-product_1;;1;;;2025-12-31
+sku;categories;enabled;family;groups;a_date;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
+product_1;;1;;;2025-12-31;;;;;;;;
 
 CSV;
 
@@ -58,8 +58,8 @@ CSV;
     public function testProductExportWithFilterInferiorToADate()
     {
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups;a_date
-product_2;;1;;;2016-06-15
+sku;categories;enabled;family;groups;a_date;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
+product_2;;1;;;2016-06-15;;;;;;;;
 
 CSV;
 

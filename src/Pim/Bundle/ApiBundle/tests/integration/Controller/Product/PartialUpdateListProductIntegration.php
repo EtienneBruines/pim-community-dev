@@ -58,7 +58,12 @@ JSON;
                 ],
                 'created'       => '2016-06-14T13:12:50+02:00',
                 'updated'       => '2016-06-14T13:12:50+02:00',
-                'associations'  => [],
+                'associations'  => [
+                    'PACK'         => ['groups' => [], 'products' => []],
+                    'SUBSTITUTION' => ['groups' => [], 'products' => []],
+                    'UPSELL'       => ['groups' => [], 'products' => []],
+                    'X_SELL'       => ['groups' => [], 'products' => []],
+                ],
             ],
             'my_identifier'  => [
                 'identifier'    => 'my_identifier',
@@ -74,7 +79,12 @@ JSON;
                 ],
                 'created'       => '2016-06-14T13:12:50+02:00',
                 'updated'       => '2016-06-14T13:12:50+02:00',
-                'associations'  => [],
+                'associations'  => [
+                    'PACK'         => ['groups' => [], 'products' => []],
+                    'SUBSTITUTION' => ['groups' => [], 'products' => []],
+                    'UPSELL'       => ['groups' => [], 'products' => []],
+                    'X_SELL'       => ['groups' => [], 'products' => []],
+                ],
             ],
         ];
 

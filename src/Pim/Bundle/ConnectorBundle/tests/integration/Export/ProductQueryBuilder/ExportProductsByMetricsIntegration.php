@@ -33,8 +33,8 @@ class ExportProductsByMetricsIntegration extends AbstractExportTestCase
     public function testProductExportByFilteringOnMetric()
     {
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups;a_metric_without_decimal_negative;a_metric_without_decimal_negative-unit
-product_1;;1;;;-10;CELSIUS
+sku;categories;enabled;family;groups;a_metric_without_decimal_negative;a_metric_without_decimal_negative-unit;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
+product_1;;1;;;-10;CELSIUS;;;;;;;;
 
 CSV;
 

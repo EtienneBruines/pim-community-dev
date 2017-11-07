@@ -43,8 +43,8 @@ class ExportProductsByPriceCollectionsIntegration extends AbstractExportTestCase
     public function testProductExportByFilteringOnProductInferiorToAPrice()
     {
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups;a_price-CNY;a_price-EUR;a_price-USD
-product_2;;1;;;;20.00;10.00
+sku;categories;enabled;family;groups;a_price-CNY;a_price-EUR;a_price-USD;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
+product_2;;1;;;;20.00;10.00;;;;;;;;
 
 CSV;
 

@@ -89,11 +89,11 @@ class ExportProductsByLocalesIntegration extends AbstractExportTestCase
     public function testProductExportWithFrenchData()
     {
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups;description-fr_FR;name-fr_FR
-french;;1;localized;;"French desc";"French name"
-english;;1;localized;;"French desc";
-complete;;1;localized;;"French desc";"French name"
-empty;;1;localized;;;
+sku;categories;enabled;family;groups;description-fr_FR;name-fr_FR;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
+french;;1;localized;;"French desc";"French name";;;;;;;;
+english;;1;localized;;"French desc";;;;;;;;;
+complete;;1;localized;;"French desc";"French name";;;;;;;;
+empty;;1;localized;;;;;;;;;;;
 
 CSV;
 
@@ -113,11 +113,11 @@ CSV;
     public function testProductExportWithEnglishAndFrenchData()
     {
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups;description-fr_FR;name-en_US;name-fr_FR
-french;;1;localized;;"French desc";;"French name"
-english;;1;localized;;"French desc";"English name";
-complete;;1;localized;;"French desc";"English name";"French name"
-empty;;1;localized;;;;
+sku;categories;enabled;family;groups;description-fr_FR;name-en_US;name-fr_FR;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
+french;;1;localized;;"French desc";;"French name";;;;;;;;
+english;;1;localized;;"French desc";"English name";;;;;;;;;
+complete;;1;localized;;"French desc";"English name";"French name";;;;;;;;
+empty;;1;localized;;;;;;;;;;;;
 
 CSV;
 
@@ -141,9 +141,9 @@ CSV;
         $this->get('pim_catalog.saver.channel')->save($channel);
 
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups;name-en_US
-english;;1;localized;;"English name"
-complete;;1;localized;;"English name"
+sku;categories;enabled;family;groups;name-en_US;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
+english;;1;localized;;"English name";;;;;;;;
+complete;;1;localized;;"English name";;;;;;;;
 
 CSV;
 

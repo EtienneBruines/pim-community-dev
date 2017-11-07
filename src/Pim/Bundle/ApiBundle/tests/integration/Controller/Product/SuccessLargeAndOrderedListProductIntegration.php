@@ -101,7 +101,20 @@ JSON;
     "values": {},
     "created": "2017-05-12T16:46:14+02:00",
     "updated": "2017-05-12T16:46:14+02:00",
-    "associations": {}
+    "associations": {
+        "PACK": {
+            "products": [], "groups" => []
+        },
+        "SUBSTITUTION": {
+            "products": [], "groups" => []
+        },
+        "UPSELL": {
+            "products": [], "groups" => []
+        },
+        "X_SELL": {
+            "products": [], "groups" => []
+        }
+    }
 }
 JSON;
 

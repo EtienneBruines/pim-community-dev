@@ -47,8 +47,8 @@ class ExportProductsByBooleanIntegration extends AbstractExportTestCase
     public function testProductExportWithBooleanFilterEqualsTrue()
     {
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups;a_yes_no
-product_with_boolean_true;;1;;;1
+sku;categories;enabled;family;groups;a_yes_no;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
+product_with_boolean_true;;1;;;1;;;;;;;;
 
 CSV;
 
@@ -74,8 +74,8 @@ CSV;
     public function testProductExportWithBooleanFilterEqualsFalse()
     {
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups;a_yes_no
-product_with_boolean_false;;1;;;0
+sku;categories;enabled;family;groups;a_yes_no;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
+product_with_boolean_false;;1;;;0;;;;;;;;
 
 CSV;
 
@@ -101,8 +101,8 @@ CSV;
     public function testProductExportWithLocalisableAndScopableBooleanFilter()
     {
         $expectedCsv = <<<CSV
-sku;categories;enabled;family;groups;a_boolean_scopable_localizable-en_US-tablet
-product_with_localisable_scopable_boolean;;1;;;1
+sku;categories;enabled;family;groups;a_boolean_scopable_localizable-en_US-tablet;PACK-groups;PACK-products;SUBSTITUTION-groups;SUBSTITUTION-products;UPSELL-groups;UPSELL-products;X_SELL-groups;X_SELL-products
+product_with_localisable_scopable_boolean;;1;;;1;;;;;;;;
 
 CSV;
 

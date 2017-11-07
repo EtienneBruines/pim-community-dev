@@ -50,6 +50,8 @@ services:
 
     pim_catalog.normalizer.standard.product.associations:
         class: '%pim_catalog.normalizer.standard.product.associations.class%'
+        arguments:
+            - '@pim_catalog.builder.product'
         tags:
             - { name: pim_serializer.normalizer, priority: 40 }
 
