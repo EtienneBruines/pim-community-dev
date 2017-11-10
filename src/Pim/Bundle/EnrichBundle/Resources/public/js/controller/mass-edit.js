@@ -27,9 +27,6 @@ define(
                         };
                     }).value();
 
-                var itemsCount = _.find(parameters, function (parameter) {
-                    return 'itemsCount' === parameter.key;
-                }).value;
                 var actionName = _.find(parameters, function (parameter) {
                     return 'actionName' === parameter.key;
                 }).value.replace(new RegExp('_', 'g'), '-');
