@@ -47,6 +47,7 @@ class ObjectDetacher implements ObjectDetacherInterface, BulkObjectDetacherInter
 
         if ($objectManager instanceof DocumentManager) {
             $this->doDetach($object, $visited);
+            $this->hardcoreDetachForOdmUoW($object);
         } else {
             $objectManager->detach($object);
             $this->doDetachScheduled($object, $visited);
@@ -188,5 +189,96 @@ class ObjectDetacher implements ObjectDetacherInterface, BulkObjectDetacherInter
                 }
             }
         }
+    }
+
+    private function hardcoreDetachForOdmUoW($object)
+    {
+        $objectManager = $this->getObjectManager($object);
+        $uow = $objectManager->getUnitOfWork();
+        $objectIds = [spl_object_hash($object)];
+
+        $originalDocumentData = &$this->getOriginalDocumentData($uow);
+        foreach (array_diff(array_keys($originalDocumentData), $objectIds) as $id) {
+            unset($originalDocumentData[$id]);
+        }
+
+        $parentAssociations = &$this->getParentAssociations($uow);
+        foreach (array_diff(array_keys($parentAssociations), $objectIds) as $id) {
+            unset($parentAssociations[$id]);
+        }
+
+        $embeddedDocumentsRegistry = &$this->getEmbeddedDocumentsRegistry($uow);
+        foreach (array_diff(array_keys($embeddedDocumentsRegistry), $objectIds) as $id) {
+            unset($embeddedDocumentsRegistry[$id]);
+        }
+
+        $identityMap = &$this->getIdentityMap($uow);
+        foreach (array_diff(array_keys($identityMap), $objectIds) as $id) {
+            unset($identityMap[$id]);
+        }
+    }
+
+    /**
+     * Get the private originalDocumentData from UoW
+     *
+     * @param UnitOfWork $uow
+     *
+     * @return array
+     */
+    private function &getOriginalDocumentData($uow)
+    {
+        $closure = \Closure::bind(function &($uow) {
+            return $uow->originalDocumentData;
+        }, null, $uow);
+
+        return $closure($uow);
+    }
+
+    /**
+     * Get the private parentAssociations from UoW
+     *
+     * @param UnitOfWork $uow
+     *
+     * @return array
+     */
+    private function &getParentAssociations($uow)
+    {
+        $closure = \Closure::bind(function &($uow) {
+            return $uow->parentAssociations;
+        }, null, $uow);
+
+        return $closure($uow);
+    }
+
+    /**
+     * Get the private parentAssociations from UoW
+     *
+     * @param UnitOfWork $uow
+     *
+     * @return array
+     */
+    private function &getEmbeddedDocumentsRegistry($uow)
+    {
+        $closure = \Closure::bind(function &($uow) {
+            return $uow->embeddedDocumentsRegistry;
+        }, null, $uow);
+
+        return $closure($uow);
+    }
+
+    /**
+     * Get the private identityMap from UoW
+     *
+     * @param UnitOfWork $uow
+     *
+     * @return array
+     */
+    private function &getIdentityMap($uow)
+    {
+        $closure = \Closure::bind(function &($uow) {
+            return $uow->identityMap;
+        }, null, $uow);
+
+        return $closure($uow);
     }
 }
