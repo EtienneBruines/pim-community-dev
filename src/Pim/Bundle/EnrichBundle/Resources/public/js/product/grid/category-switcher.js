@@ -31,7 +31,6 @@ define(
             isOpen: false,
             categoryLabel: null,
             treeLabel: null,
-            outsideEventListener: null,
 
             /**
              * {@inheritdoc}
@@ -78,27 +77,8 @@ define(
                 });
 
                 this.getRoot().trigger('grid:third_column:toggle');
-
-                if (!this.isOpen) {
-                    this.outsideEventListener = this.outsideClickListener.bind(this);
-                    document.addEventListener('mousedown', this.outsideEventListener);
-                }
-
                 this.isOpen = !this.isOpen;
                 this.render();
-            },
-
-            /**
-             * Closes the criteria if the user clicks on the rest of the document.
-             *
-             * @param {Event} event
-             */
-            outsideClickListener(event) {
-                if (this.isOpen && !$(event.target).closest('.AknDefault-thirdColumn').length) {
-                    Resizable.destroy();
-                    this.toggleThirdColumn();
-                    document.removeEventListener('mousedown', this.outsideEventListener);
-                }
             },
 
             /**
